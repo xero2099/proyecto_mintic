@@ -1,11 +1,8 @@
 import 'package:get/get.dart';
 import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
-
-
+import 'package:proyecto_mintic/ui/pages/registro/registro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({Key key}) : super(key: key);
@@ -68,9 +65,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
               ),
             ),
-            GestureDetector(onTap:() {
-              Get.to(() => InicioWidget());
-            },
+            //BOTON DE INICIO
+            GestureDetector(
+              onTap: () {
+                Get.to(() => InicioWidget());
+              },
               child: Align(
                 alignment: AlignmentDirectional(-0.03, 0.41),
                 child: Image.asset(
@@ -92,13 +91,19 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.72),
-              child: Image.asset(
-                'assets/images/Boton_.png',
-                width: 230,
-                height: 35,
-                fit: BoxFit.cover,
+            //BOTON DE REGISTRO
+            GestureDetector(
+              onTap: () {
+                Get.to(() => RegistroWidget());
+              },
+              child: Align(
+                alignment: AlignmentDirectional(0, 0.72),
+                child: Image.asset(
+                  'assets/images/Boton_.png',
+                  width: 230,
+                  height: 35,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Align(
