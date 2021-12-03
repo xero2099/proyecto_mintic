@@ -1,7 +1,8 @@
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BusquedaWidget extends StatefulWidget {
   const BusquedaWidget({Key key}) : super(key: key);
@@ -85,16 +86,21 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 0, 0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image.network(
-                                      'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
-                                      width: 90,
-                                      height: 90,
-                                      fit: BoxFit.cover,
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.to(() => PerfilWidget());
+                                  },
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 0, 0, 0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image.network(
+                                        'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
+                                        width: 90,
+                                        height: 90,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -117,16 +123,21 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Image.network(
-                                        'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
-                                        width: 90,
-                                        height: 90,
-                                        fit: BoxFit.cover,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => PerfilWidget());
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 0, 0),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.network(
+                                          'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
+                                          width: 90,
+                                          height: 90,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -150,16 +161,21 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Image.network(
-                                        'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
-                                        width: 90,
-                                        height: 90,
-                                        fit: BoxFit.cover,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => PerfilWidget());
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 0, 0),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.network(
+                                          'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
+                                          width: 90,
+                                          height: 90,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -183,16 +199,21 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Image.network(
-                                        'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
-                                        width: 90,
-                                        height: 90,
-                                        fit: BoxFit.cover,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => PerfilWidget());
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 0, 0),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.network(
+                                          'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
+                                          width: 90,
+                                          height: 90,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -216,16 +237,21 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Image.network(
-                                        'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
-                                        width: 90,
-                                        height: 90,
-                                        fit: BoxFit.cover,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => PerfilWidget());
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 0, 0),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.network(
+                                          'https://play-lh.googleusercontent.com/5Zd9MaOpxLqe0ZrsXKnmUmLkpsDBvThxxtcdXu4RITHPYJ8Qp4srQqSjPmYz4_dmfc4',
+                                          width: 90,
+                                          height: 90,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
