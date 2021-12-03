@@ -1,6 +1,6 @@
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:proyecto_mintic/ui/pages/filtro/filtro_widget.dart';
+import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -189,7 +189,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                           //BOTON REGISTRO
                           GestureDetector(
                             onTap: () {
-                              Get.to(() => FiltroWidget());
+                              Get.to(() => InicioWidget());
                             },
                             child: Align(
                               alignment: AlignmentDirectional(-0.12, 0.81),

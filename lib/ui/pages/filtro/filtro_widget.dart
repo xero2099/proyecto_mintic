@@ -1,8 +1,7 @@
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FiltroWidget extends StatefulWidget {
   const FiltroWidget({Key key}) : super(key: key);
@@ -191,19 +190,14 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => InicioWidget());
-                        },
-                        child: Align(
-                          alignment: AlignmentDirectional(0.04, 0.9),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Image.asset(
-                              'assets/images/Boton_.png',
-                              height: 35,
-                              fit: BoxFit.cover,
-                            ),
+                      Align(
+                        alignment: AlignmentDirectional(0.04, 0.9),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            'assets/images/Boton_.png',
+                            height: 35,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
