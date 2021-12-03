@@ -33,6 +33,7 @@ dependencies:
   page_transition: 2.0.4
   timeago: 3.1.0
   url_launcher: 6.0.15
+  get: ^4.3.8
 
 
   # The following adds the Cupertino Icons font to your application.
