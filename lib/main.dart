@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:proyecto_mintic/controlador/state_controller.dart';
 import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
 
+//probando rama juan
 void main() {
   runApp(MyApp());
   Get.put(StateController());
