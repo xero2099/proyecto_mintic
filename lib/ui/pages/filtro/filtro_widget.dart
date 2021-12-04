@@ -67,12 +67,12 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                             style: FlutterFlowTheme.bodyText1,
                           ),
                         ),
-                      ),
+                      ), //ES LA IMAGEN
                       Align(
                         alignment: AlignmentDirectional(-0.7, -0.15),
                         child: Container(
                           width: 80,
-                          height: 120,
+                          height: 170,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -113,7 +113,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                         alignment: AlignmentDirectional(0, -0.15),
                         child: Container(
                           width: 80,
-                          height: 120,
+                          height: 170,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -154,7 +154,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                         alignment: AlignmentDirectional(0.7, -0.15),
                         child: Container(
                           width: 80,
-                          height: 120,
+                          height: 170,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -222,7 +222,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                         alignment: AlignmentDirectional(-0.7, 0.45),
                         child: Container(
                           width: 80,
-                          height: 120,
+                          height: 150,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -263,7 +263,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                         alignment: AlignmentDirectional(0, 0.45),
                         child: Container(
                           width: 80,
-                          height: 120,
+                          height: 150,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -304,7 +304,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                         alignment: AlignmentDirectional(0.7, 0.45),
                         child: Container(
                           width: 80,
-                          height: 120,
+                          height: 150,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,

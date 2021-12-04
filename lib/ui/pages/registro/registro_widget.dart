@@ -1,5 +1,4 @@
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get.dart';
 import 'package:proyecto_mintic/ui/pages/filtro/filtro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -33,6 +32,133 @@ class _RegistroWidgetState extends State<RegistroWidget> {
   }
 
   @override
+  bool isEmail(String em) {
+    String p =
+        r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
+    RegExp regExp = RegExp(p);
+    return regExp.hasMatch(em);
+  }
+
+  void errorFormatos() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("El correo no tiene el formato requerido"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorFormatos3() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("Todos los campos son requeridos"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorFormatos2() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("La contraseña y su confirmacion no son la misma"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorFormatos4() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("El nombre y usuario son requeridos"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorCheckBox() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("Por favor acepte los terminos y condiciones"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
@@ -150,7 +276,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 keyboardType: TextInputType.emailAddress,
                                 validator: (val) {
                                   if (val.isEmpty) {
-                                    return 'Field is required';
+                                    return 'El campo es requerido';
                                   }
 
                                   return null;
@@ -186,10 +312,34 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                               ),
                             ),
                           ),
-                          //BOTON REGISTRO
                           GestureDetector(
                             onTap: () {
-                              Get.to(() => FiltroWidget());
+                              if (textController4.text.isEmpty &&
+                                  textController3.text.isEmpty &&
+                                  textController1.text.isEmpty &&
+                                  textController2.text.isEmpty &&
+                                  textController5.text.isEmpty) {
+                                return errorFormatos3();
+                              } else if (textController4.text.isEmpty ||
+                                  textController3.text.isEmpty ||
+                                  textController1.text.isEmpty ||
+                                  textController2.text.isEmpty ||
+                                  textController5.text.isEmpty) {
+                                return errorFormatos3();
+                              } else if (textController4.text.isEmpty ||
+                                  textController3.text.isEmpty) {
+                                return errorFormatos4();
+                              } else if (isEmail(textController1.text) ==
+                                  false) {
+                                return errorFormatos();
+                              } else if (textController2.text !=
+                                  textController5.text) {
+                                return errorFormatos2();
+                              } else if (!checkboxListTileValue) {
+                                return errorCheckBox();
+                              } else {
+                                Get.to(() => FiltroWidget());
+                              }
                             },
                             child: Align(
                               alignment: AlignmentDirectional(-0.12, 0.81),
@@ -259,7 +409,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 keyboardType: TextInputType.visiblePassword,
                                 validator: (val) {
                                   if (val.isEmpty) {
-                                    return 'Field is required';
+                                    return 'El campo es requerido';
                                   }
 
                                   return null;
@@ -336,7 +486,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 textAlign: TextAlign.center,
                                 validator: (val) {
                                   if (val.isEmpty) {
-                                    return 'Field is required';
+                                    return 'El campo es requerido';
                                   }
 
                                   return null;
@@ -385,7 +535,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 textAlign: TextAlign.center,
                                 validator: (val) {
                                   if (val.isEmpty) {
-                                    return 'Field is required';
+                                    return 'El campo es requerido';
                                   }
 
                                   return null;
@@ -449,7 +599,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 keyboardType: TextInputType.visiblePassword,
                                 validator: (val) {
                                   if (val.isEmpty) {
-                                    return 'Field is required';
+                                    return 'El campo es requerido';
                                   }
 
                                   return null;

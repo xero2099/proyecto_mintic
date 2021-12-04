@@ -26,6 +26,133 @@ class _LoginWidgetState extends State<LoginWidget> {
   }
 
   @override
+  bool isEmail(String em) {
+    String p =
+        r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
+    RegExp regExp = RegExp(p);
+    return regExp.hasMatch(em);
+  }
+
+  void errorFormato() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("Formato de correo incorrecto"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorFormato2() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("Mínimo la contraseña debe tener 6 caracteres"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorFormato3() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("Los campos usuario y contraseña son requeridos"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorFormato4() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("El campo de usuario es requerido"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
+  void errorFormato5() {
+    showDialog(
+        context: context,
+        barrierDismissible:
+            false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "ERROR",
+            ),
+            content: Text("El campo de la contraseña es requerido"),
+            //buttons?
+            actions: <Widget>[
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }, //closes popup
+              ),
+            ],
+          );
+        });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -65,10 +192,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
               ),
             ),
-            //BOTON DE INICIO
             GestureDetector(
               onTap: () {
-                Get.to(() => InicioWidget());
+                print(isEmail(textController1.text));
+                if (textController1.text.isEmpty &&
+                    textController2.text.isEmpty) {
+                  return errorFormato3();
+                } else if (textController1.text.isEmpty) {
+                  return errorFormato4();
+                } else if (textController2.text.isEmpty) {
+                  return errorFormato5();
+                } else if (isEmail(textController1.text) == false) {
+                  return errorFormato();
+                } else if (textController2.text.length < 6) {
+                  return errorFormato2();
+                } else {
+                  Get.to(() => InicioWidget());
+                }
               },
               child: Align(
                 alignment: AlignmentDirectional(-0.03, 0.41),
@@ -91,7 +231,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
               ),
             ),
-            //BOTON DE REGISTRO
             GestureDetector(
               onTap: () {
                 Get.to(() => RegistroWidget());
@@ -156,8 +295,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                         fit: BoxFit.cover,
                       ),
                     ),
+                    // campo de texto usuario
                     Align(
-                      alignment: AlignmentDirectional(0, 0),
+                      alignment: AlignmentDirectional(0, 6),
                       child: TextFormField(
                         controller: textController1,
                         obscureText: false,
@@ -185,7 +325,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                           contentPadding:
                               EdgeInsetsDirectional.fromSTEB(0, 0, 0, 13),
                         ),
-                        style: FlutterFlowTheme.bodyText1,
+                        style: FlutterFlowTheme.bodyText1.override(
+                          fontFamily: 'NEXA',
+                          fontSize: 22,
+                          useGoogleFonts: false,
+                          color: Colors.white,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     )
@@ -214,10 +359,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                           fit: BoxFit.cover,
                         ),
                       ),
+                      //campo de texto contraseña
                       Align(
                         alignment: AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(21, 0, 18, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(60, 0, 18, 0),
                           child: TextFormField(
                             controller: textController2,
                             obscureText: !passwordVisibility,
@@ -262,6 +408,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               fontFamily: 'NEXA',
                               fontSize: 22,
                               useGoogleFonts: false,
+                              color: Colors.white,
                             ),
                             textAlign: TextAlign.center,
                             keyboardType: TextInputType.visiblePassword,
