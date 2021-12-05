@@ -299,10 +299,13 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(30, 18, 0, 0),
-                          child: Image.asset(
-                            'assets/images/chat_off.png',
-                            width: 40,
-                            fit: BoxFit.cover,
+                          child: GestureDetector(
+                            onTap: () { Get.to(() => InicioWidget());
+                            child: Image.asset(
+                              'assets/images/chat_off.png',
+                              width: 40,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Padding(
