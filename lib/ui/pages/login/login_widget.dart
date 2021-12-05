@@ -296,6 +296,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                       ),
                     ),
                     // campo de texto usuario
+                    const SizedBox(
+                      //prueba para cambios
+                      height: 30,
+                    ),
                     Align(
                       alignment: AlignmentDirectional(0, 6),
                       child: TextFormField(
@@ -360,6 +364,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                       ),
                       //campo de texto contraseña
+                      const SizedBox(
+                        height: 30,
+                      ),
                       Align(
                         alignment: AlignmentDirectional(0, 0),
                         child: Padding(

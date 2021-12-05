@@ -1,3 +1,8 @@
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
+import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -300,7 +305,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(30, 18, 0, 0),
                           child: GestureDetector(
-                            onTap: () { Get.to(() => InicioWidget());
+                            onTap: () {
+                              Get.to(() => ChatprivadoWidget());
+                            },
                             child: Image.asset(
                               'assets/images/chat_off.png',
                               width: 40,
@@ -322,10 +329,15 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           child: Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(40, 18, 0, 0),
-                            child: Image.asset(
-                              'assets/images/perfik_on.png',
-                              width: 40,
-                              fit: BoxFit.cover,
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.to(() => PerfilWidget());
+                              },
+                              child: Image.asset(
+                                'assets/images/perfik_on.png',
+                                width: 40,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         )
