@@ -290,7 +290,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 18, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(40, 18, 0, 4),
                           child: Image.asset(
                             'assets/images/Home_off.png',
                             width: 40,
@@ -306,7 +306,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(90, 18, 0, 0),
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(105, 18, 0, 0),
                           child: Image.asset(
                             'assets/images/game_off.png',
                             width: 45,
@@ -317,7 +318,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           alignment: AlignmentDirectional(0, 0),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(45, 18, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(40, 18, 0, 0),
                             child: Image.asset(
                               'assets/images/perfik_on.png',
                               width: 40,

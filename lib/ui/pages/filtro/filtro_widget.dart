@@ -48,6 +48,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
             Align(
               alignment: AlignmentDirectional(0.05, 0.2),
               child: Padding(
+                //Este es el tamaño del rectángulo blanco
                 padding: EdgeInsetsDirectional.fromSTEB(0, 150, 0, 20),
                 child: Container(
                   width: 340,
@@ -219,10 +220,10 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-0.7, 0.45),
+                        alignment: AlignmentDirectional(-0.7, 0.43),
                         child: Container(
                           width: 80,
-                          height: 150,
+                          height: 130,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -238,7 +239,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                 child: Text(
                                   'Shooter',
                                   style: FlutterFlowTheme.bodyText1,
