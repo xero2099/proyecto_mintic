@@ -159,6 +159,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
         });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
@@ -175,6 +176,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                 height: double.infinity,
                 fit: BoxFit.cover,
               ),
+              /*
               Align(
                 alignment: AlignmentDirectional(-0.9, -0.95),
                 child: Image.asset(
@@ -183,7 +185,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                   height: 50,
                   fit: BoxFit.contain,
                 ),
-              ),
+              ),*/
               Align(
                 alignment: AlignmentDirectional(0.09, 0.62),
                 child: Container(
@@ -271,7 +273,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 13),
                                 ),
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'NEXA',
+                                  fontSize: 22,
+                                  useGoogleFonts: false,
+                                ),
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.emailAddress,
                                 validator: (val) {
@@ -404,7 +410,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 13),
                                 ),
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'NEXA',
+                                  fontSize: 22,
+                                  useGoogleFonts: false,
+                                ),
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.visiblePassword,
                                 validator: (val) {
@@ -482,7 +492,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 13),
                                 ),
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'NEXA',
+                                  fontSize: 22,
+                                  useGoogleFonts: false,
+                                ),
                                 textAlign: TextAlign.center,
                                 validator: (val) {
                                   if (val.isEmpty) {
@@ -531,7 +545,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 13),
                                 ),
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'NEXA',
+                                  fontSize: 22,
+                                  useGoogleFonts: false,
+                                ),
                                 textAlign: TextAlign.center,
                                 validator: (val) {
                                   if (val.isEmpty) {
@@ -594,7 +612,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 13),
                                 ),
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'NEXA',
+                                  fontSize: 22,
+                                  useGoogleFonts: false,
+                                ),
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.visiblePassword,
                                 validator: (val) {

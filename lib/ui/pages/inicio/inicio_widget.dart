@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:proyecto_mintic/controlador/state_controller.dart';
 import 'package:proyecto_mintic/ui/pages/busqueda/busqueda_widget.dart';
+import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
 import 'package:proyecto_mintic/ui/widgets/card_state.dart';
 import 'package:proyecto_mintic/domain/models/state_model.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +54,7 @@ class _InicioWidgetState extends State<InicioWidget> {
             Align(
               alignment: AlignmentDirectional(0, 0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 665),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 720),
                 child: Image.asset(
                   'assets/images/cabezal.png',
                   width: double.infinity,
@@ -64,7 +65,7 @@ class _InicioWidgetState extends State<InicioWidget> {
             Align(
               alignment: AlignmentDirectional(-0.8, -1),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                 child: Image.asset(
                   'assets/images/Logo_2.png',
                   width: 150,
@@ -79,11 +80,14 @@ class _InicioWidgetState extends State<InicioWidget> {
               },
               child: Align(
                 alignment: AlignmentDirectional(0.75, -0.97),
-                child: Image.asset(
-                  'assets/images/BTN_BUSCAR.png',
-                  width: 50,
-                  height: 45,
-                  fit: BoxFit.contain,
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 33, 0, 0),
+                  child: Image.asset(
+                    'assets/images/BTN_BUSCAR.png',
+                    width: 50,
+                    height: 45,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),
@@ -107,13 +111,18 @@ class _InicioWidgetState extends State<InicioWidget> {
                           return ListView.builder(
                             itemCount: statecontroller.listStates.length,
                             itemBuilder: (context, index) {
-                              return CardState(
-                                  titulo:
-                                      statecontroller.listState[index].titulo,
-                                  pathImagen: statecontroller
-                                      .listState[index].pathImagen,
-                                  estado:
-                                      statecontroller.listState[index].estado);
+                              return GestureDetector(
+                                onTap: () {
+                                  Get.to(() => PerfilWidget());
+                                },
+                                child: CardState(
+                                    titulo:
+                                        statecontroller.listState[index].titulo,
+                                    pathImagen: statecontroller
+                                        .listState[index].pathImagen,
+                                    estado: statecontroller
+                                        .listState[index].estado),
+                              );
                             },
                           );
                         }))
@@ -133,7 +142,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                   fit: BoxFit.contain,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

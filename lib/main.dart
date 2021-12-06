@@ -4,10 +4,14 @@ import 'package:get/get.dart';
 import 'package:proyecto_mintic/controlador/state_controller.dart';
 import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
 
+import 'controlador/state_controller2.dart';
+
 //probando rama juan
 void main() {
   runApp(MyApp());
   Get.put(StateController());
+  Get.put(StateController2());
+  Get.lazyPut(() => StateController2());
 }
 
 class MyApp extends StatelessWidget {
