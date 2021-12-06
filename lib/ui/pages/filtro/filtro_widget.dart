@@ -89,7 +89,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                 child: Text(
                                   'Acción',
                                   style: FlutterFlowTheme.bodyText1,
@@ -104,7 +104,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               )
                             ],
                           ),
@@ -130,7 +130,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                 child: Text(
                                   'MOBA',
                                   style: FlutterFlowTheme.bodyText1,
@@ -145,7 +145,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               )
                             ],
                           ),
@@ -171,7 +171,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                 child: Text(
                                   'CCG',
                                   style: FlutterFlowTheme.bodyText1,
@@ -186,7 +186,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               )
                             ],
                           ),
@@ -220,10 +220,10 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-0.7, 0.43),
+                        alignment: AlignmentDirectional(-0.7, 0.50),
                         child: Container(
                           width: 80,
-                          height: 130,
+                          height: 136,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -254,17 +254,17 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               )
                             ],
                           ),
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0, 0.45),
+                        alignment: AlignmentDirectional(0, 0.50),
                         child: Container(
                           width: 80,
-                          height: 150,
+                          height: 136,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             shape: BoxShape.rectangle,
@@ -280,7 +280,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                 child: Text(
                                   'RPG',
                                   style: FlutterFlowTheme.bodyText1,
@@ -295,14 +295,14 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               )
                             ],
                           ),
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.7, 0.45),
+                        alignment: AlignmentDirectional(0.7, 0.55),
                         child: Container(
                           width: 80,
                           height: 150,
@@ -321,7 +321,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                 child: Text(
                                   'Simulación',
                                   style: FlutterFlowTheme.bodyText1,
@@ -336,7 +336,7 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               )
                             ],
                           ),

@@ -1,7 +1,6 @@
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
-import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
