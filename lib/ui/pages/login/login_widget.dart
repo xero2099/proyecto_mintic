@@ -171,104 +171,6 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-0.69, -0.09),
-              child: Text(
-                'Usuario',
-                textAlign: TextAlign.start,
-                style: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'NEXA',
-                  color: Color(0xFFEAB8EC),
-                  useGoogleFonts: false,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(-0.64, 0.13),
-              child: Text(
-                'Contraseña',
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'NEXA',
-                  color: Color(0xFFEAB8EC),
-                  useGoogleFonts: false,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                print(isEmail(textController1.text));
-                if (textController1.text.isEmpty &&
-                    textController2.text.isEmpty) {
-                  return errorFormato3();
-                } else if (textController1.text.isEmpty) {
-                  return errorFormato4();
-                } else if (textController2.text.isEmpty) {
-                  return errorFormato5();
-                } else if (isEmail(textController1.text) == false) {
-                  return errorFormato();
-                } else if (textController2.text.length < 6) {
-                  return errorFormato2();
-                } else {
-                  Get.to(() => InicioWidget());
-                }
-              },
-              child: Align(
-                alignment: AlignmentDirectional(-0.03, 0.41),
-                child: Image.asset(
-                  'assets/images/Boton_.png',
-                  width: 230,
-                  height: 35,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(-0.01, 0.4),
-              child: Text(
-                'Login',
-                style: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'NEXA',
-                  color: Color(0xFFFABAFA),
-                  useGoogleFonts: false,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Get.to(() => RegistroWidget());
-              },
-              child: Align(
-                alignment: AlignmentDirectional(0, 0.72),
-                child: Image.asset(
-                  'assets/images/Boton_.png',
-                  width: 230,
-                  height: 35,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.5),
-              child: Text(
-                'Olvidaste Tu Contraseña?',
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'NEXA',
-                  color: Color(0xFFEAB8EC),
-                  useGoogleFonts: false,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.02, 0.7),
-              child: Text(
-                'Regístrate ',
-                style: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'NEXA',
-                  color: Color(0xFFFABAFA),
-                  useGoogleFonts: false,
-                ),
-              ),
-            ),
-            Align(
               alignment: AlignmentDirectional(0.07, -0.61),
               child: Image.asset(
                 'assets/images/Logo_1.png',
@@ -277,97 +179,140 @@ class _LoginWidgetState extends State<LoginWidget> {
                 fit: BoxFit.cover,
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0, 0),
-              child: Container(
-                width: 300,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Color(0x00EEEEEE),
+            ListView(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(-0.69, 0),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 130, 0, 0),
+                    child: Text(
+                      'Usuario',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.subtitle2.override(
+                        fontFamily: 'NEXA',
+                        color: Color(0xFFEAB8EC),
+                        useGoogleFonts: false,
+                      ),
+                    ),
+                  ),
                 ),
-                child: Stack(
-                  children: [
-                    Align(
-                      alignment: AlignmentDirectional(-0.06, 0.02),
+                Align(
+                  alignment: AlignmentDirectional(-0.64, 0.13),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 130, 0, 0),
+                    child: Text(
+                      'Contraseña',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'NEXA',
+                        color: Color(0xFFEAB8EC),
+                        useGoogleFonts: false,
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print(isEmail(textController1.text));
+                    if (textController1.text.isEmpty &&
+                        textController2.text.isEmpty) {
+                      return errorFormato3();
+                    } else if (textController1.text.isEmpty) {
+                      return errorFormato4();
+                    } else if (textController2.text.isEmpty) {
+                      return errorFormato5();
+                    } else if (isEmail(textController1.text) == false) {
+                      return errorFormato();
+                    } else if (textController2.text.length < 6) {
+                      return errorFormato2();
+                    } else {
+                      Get.to(() => InicioWidget());
+                    }
+                  },
+                  child: Align(
+                    alignment: AlignmentDirectional(-0.03, 0.41),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 120, 0, 0),
                       child: Image.asset(
-                        'assets/images/barra_2.png',
-                        width: 300,
+                        'assets/images/Boton_.png',
+                        width: 230,
                         height: 35,
                         fit: BoxFit.cover,
                       ),
                     ),
-                    // campo de texto usuario
-                    Align(
-                      alignment: AlignmentDirectional(0, 6),
-                      child: TextFormField(
-                        controller: textController1,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          contentPadding:
-                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 13),
-                        ),
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'NEXA',
-                          fontSize: 22,
-                          useGoogleFonts: false,
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                  ],
+                  ),
                 ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.01, 0.22),
-              child: Container(
-                width: 300,
-                height: 35,
-                decoration: BoxDecoration(
-                  color: Color(0x00EEEEEE),
+                Align(
+                  alignment: AlignmentDirectional(-0.01, 0.4),
+                  child: Text(
+                    'Login',
+                    style: FlutterFlowTheme.subtitle2.override(
+                      fontFamily: 'NEXA',
+                      color: Color(0xFFFABAFA),
+                      useGoogleFonts: false,
+                    ),
+                  ),
                 ),
-                child: Align(
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => RegistroWidget());
+                  },
+                  child: Align(
+                    alignment: AlignmentDirectional(0, 0.72),
+                    child: Image.asset(
+                      'assets/images/Boton_.png',
+                      width: 230,
+                      height: 35,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0, 0.5),
+                  child: Text(
+                    'Olvidaste Tu Contraseña?',
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'NEXA',
+                      color: Color(0xFFEAB8EC),
+                      useGoogleFonts: false,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0.02, 0.7),
+                  child: Text(
+                    'Regístrate ',
+                    style: FlutterFlowTheme.subtitle2.override(
+                      fontFamily: 'NEXA',
+                      color: Color(0xFFFABAFA),
+                      useGoogleFonts: false,
+                    ),
+                  ),
+                ),
+                Align(
                   alignment: AlignmentDirectional(0, 0),
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional(0, 0.22),
-                        child: Image.asset(
-                          'assets/images/barra_2.png',
-                          width: 300,
-                          height: 35,
-                          fit: BoxFit.cover,
+                  child: Container(
+                    width: 300,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0x00EEEEEE),
+                    ),
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(-0.06, 0.02),
+                          child: Image.asset(
+                            'assets/images/barra_2.png',
+                            width: 300,
+                            height: 35,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
-                      //campo de texto contraseña
-                      Align(
-                        alignment: AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(60, 0, 18, 0),
+                        // campo de texto usuario
+                        Align(
+                          alignment: AlignmentDirectional(0, 6),
                           child: TextFormField(
-                            controller: textController2,
-                            obscureText: !passwordVisibility,
+                            controller: textController1,
+                            obscureText: false,
                             decoration: InputDecoration(
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -390,20 +335,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                               ),
                               contentPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
-                              suffixIcon: InkWell(
-                                onTap: () => setState(
-                                  () =>
-                                      passwordVisibility = !passwordVisibility,
-                                ),
-                                child: Icon(
-                                  passwordVisibility
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
-                              ),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 13),
                             ),
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'NEXA',
@@ -412,15 +344,98 @@ class _LoginWidgetState extends State<LoginWidget> {
                               color: Colors.white,
                             ),
                             textAlign: TextAlign.center,
-                            keyboardType: TextInputType.visiblePassword,
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            )
+                Align(
+                  alignment: AlignmentDirectional(0.01, 0.22),
+                  child: Container(
+                    width: 300,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      color: Color(0x00EEEEEE),
+                    ),
+                    child: Align(
+                      alignment: AlignmentDirectional(0, 0),
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: AlignmentDirectional(0, 0.22),
+                            child: Image.asset(
+                              'assets/images/barra_2.png',
+                              width: 300,
+                              height: 35,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          //campo de texto contraseña
+                          Align(
+                            alignment: AlignmentDirectional(0, 0),
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(60, 0, 18, 0),
+                              child: TextFormField(
+                                controller: textController2,
+                                obscureText: !passwordVisibility,
+                                decoration: InputDecoration(
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1,
+                                    ),
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(4.0),
+                                      topRight: Radius.circular(4.0),
+                                    ),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1,
+                                    ),
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(4.0),
+                                      topRight: Radius.circular(4.0),
+                                    ),
+                                  ),
+                                  contentPadding:
+                                      EdgeInsetsDirectional.fromSTEB(
+                                          0, 3, 0, 0),
+                                  suffixIcon: InkWell(
+                                    onTap: () => setState(
+                                      () => passwordVisibility =
+                                          !passwordVisibility,
+                                    ),
+                                    child: Icon(
+                                      passwordVisibility
+                                          ? Icons.visibility_outlined
+                                          : Icons.visibility_off_outlined,
+                                      color: Color(0xFF757575),
+                                      size: 22,
+                                    ),
+                                  ),
+                                ),
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'NEXA',
+                                  fontSize: 22,
+                                  useGoogleFonts: false,
+                                  color: Colors.white,
+                                ),
+                                textAlign: TextAlign.center,
+                                keyboardType: TextInputType.visiblePassword,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
