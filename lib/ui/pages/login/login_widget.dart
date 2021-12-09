@@ -8,10 +8,10 @@ class LoginWidget extends StatefulWidget {
   const LoginWidget({Key key}) : super(key: key);
 
   @override
-  _LoginWidgetState createState() => _LoginWidgetState();
+  LoginWidgetState createState() => LoginWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
+class LoginWidgetState extends State<LoginWidget> {
   TextEditingController textController1;
   TextEditingController textController2;
   bool passwordVisibility;
