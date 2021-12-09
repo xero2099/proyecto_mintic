@@ -66,6 +66,7 @@ class _ChatprivadoWidgetState extends State<ChatprivadoWidget> {
                 style: FlutterFlowTheme.title3,
               ),
             ),
+            /*
             Align(
               alignment: AlignmentDirectional(-0.8, -0.96),
               child: Image.asset(
@@ -73,7 +74,7 @@ class _ChatprivadoWidgetState extends State<ChatprivadoWidget> {
                 width: 30,
                 fit: BoxFit.cover,
               ),
-            ),
+            ),*/
             Align(
               alignment: AlignmentDirectional(0, 0),
               child: Padding(

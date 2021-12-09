@@ -166,7 +166,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
       autovalidateMode: AutovalidateMode.always,
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
         body: SafeArea(
           ///child: Expanded(
           child: Stack(
@@ -328,48 +327,122 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     ),
                                   ),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    if (textController4.text.isEmpty &&
-                                        textController3.text.isEmpty &&
-                                        textController1.text.isEmpty &&
-                                        textController2.text.isEmpty &&
-                                        textController5.text.isEmpty) {
-                                      return errorFormatos3();
-                                    } else if (textController4.text.isEmpty ||
-                                        textController3.text.isEmpty ||
-                                        textController1.text.isEmpty ||
-                                        textController2.text.isEmpty ||
-                                        textController5.text.isEmpty) {
-                                      return errorFormatos3();
-                                    } else if (textController4.text.isEmpty ||
-                                        textController3.text.isEmpty) {
-                                      return errorFormatos4();
-                                    } else if (isEmail(textController1.text) ==
-                                        false) {
-                                      return errorFormatos();
-                                    } else if (textController2.text !=
-                                        textController5.text) {
-                                      return errorFormatos2();
-                                    } else if (!checkboxListTileValue) {
-                                      return errorCheckBox();
-                                    } else {
-                                      Get.to(() => FiltroWidget());
-                                    }
-                                  },
-                                  child: Align(
-                                    alignment:
-                                        AlignmentDirectional(-0.12, 0.81),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Image.asset(
-                                        'assets/images/Boton_.png',
-                                        height: 35,
-                                        fit: BoxFit.cover,
-                                      ),
+                                //BOTON REGISTRO
+                                Align(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 480, 3, 0),
+                                    child: Container(
+                                      child: Stack(children: [
+                                        Align(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 1, 0, 0),
+                                            child: GestureDetector(
+                                              onTap: () {},
+                                              child: Align(
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 0, 0, 0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    child: Image.asset(
+                                                      'assets/images/Boton_.png',
+                                                      height: 35,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          child: SizedBox(
+                                            width: 230,
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(1, 8, 2, 2),
+                                              child: TextButton(
+                                                key: Key('register2Submit'),
+                                                style: TextButton.styleFrom(
+                                                  padding:
+                                                      const EdgeInsets.all(-8),
+                                                  primary: Color(0xFFFABAFA),
+                                                ),
+                                                onPressed: () {
+                                                  if (textController4.text.isEmpty &&
+                                                      textController3
+                                                          .text.isEmpty &&
+                                                      textController1
+                                                          .text.isEmpty &&
+                                                      textController2
+                                                          .text.isEmpty &&
+                                                      textController5
+                                                          .text.isEmpty) {
+                                                    return errorFormatos3();
+                                                  } else if (textController4
+                                                          .text.isEmpty ||
+                                                      textController3
+                                                          .text.isEmpty ||
+                                                      textController1
+                                                          .text.isEmpty ||
+                                                      textController2
+                                                          .text.isEmpty ||
+                                                      textController5
+                                                          .text.isEmpty) {
+                                                    return errorFormatos3();
+                                                  } else if (textController4
+                                                          .text.isEmpty ||
+                                                      textController3
+                                                          .text.isEmpty) {
+                                                    return errorFormatos4();
+                                                  } else if (isEmail(
+                                                          textController1
+                                                              .text) ==
+                                                      false) {
+                                                    return errorFormatos();
+                                                  } else if (textController2
+                                                          .text !=
+                                                      textController5.text) {
+                                                    return errorFormatos2();
+                                                  } else if (!checkboxListTileValue) {
+                                                    return errorCheckBox();
+                                                  } else {
+                                                    Get.to(
+                                                        () => FiltroWidget());
+                                                  }
+                                                },
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 0, 0, 0),
+                                                  child: Text(
+                                                    'Registro',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme
+                                                        .bodyText1
+                                                        .override(
+                                                      fontFamily: 'NEXA',
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      useGoogleFonts: false,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
                                     ),
                                   ),
                                 ),
+                                //
                                 Align(
                                   alignment: AlignmentDirectional(-0.8, 0.03),
                                   child: Text(
@@ -450,20 +523,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Colors.black,
                                       fontSize: 18,
                                       fontWeight: FontWeight.w900,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: AlignmentDirectional(0, 0.79),
-                                  child: Text(
-                                    'Registro',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'NEXA',
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
                                       useGoogleFonts: false,
                                     ),
                                   ),
