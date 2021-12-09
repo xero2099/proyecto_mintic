@@ -8,12 +8,13 @@ import 'controlador/state_controller2.dart';
 
 //probando rama juan
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
   Get.put(StateController());
   Get.put(StateController2());
-  Get.lazyPut(() => StateController2());
+  runApp(MyApp());
 }
 
+//6000+8000
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
 

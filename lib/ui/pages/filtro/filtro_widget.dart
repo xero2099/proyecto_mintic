@@ -192,30 +192,72 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => InicioWidget());
-                        },
-                        child: Align(
-                          alignment: AlignmentDirectional(0.04, 0.9),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Image.asset(
-                              'assets/images/Boton_.png',
-                              height: 35,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
+                      //BOTON FILTRO
                       Align(
-                        alignment: AlignmentDirectional(0.04, 0.88),
-                        child: Text(
-                          'Iniciar',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'NEXA',
-                            color: Colors.white,
-                            useGoogleFonts: false,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 480, 3, 0),
+                          child: Container(
+                            child: Stack(children: [
+                              Align(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 1, 0, 0),
+                                  child: GestureDetector(
+                                    onTap: () {},
+                                    child: Align(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                          child: Image.asset(
+                                            'assets/images/Boton_.png',
+                                            height: 35,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                child: SizedBox(
+                                  width: 230,
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        1, 8, 2, 2),
+                                    child: TextButton(
+                                      key: Key('iniciarSubmit'),
+                                      style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(-8),
+                                        primary: Color(0xFFFABAFA),
+                                      ),
+                                      onPressed: () {
+                                        Get.to(() => InicioWidget());
+                                      },
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 0),
+                                        child: Text(
+                                          'Iniciar',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'NEXA',
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts: false,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ]),
                           ),
                         ),
                       ),
