@@ -2,3 +2,5 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import '../lib/ui/pages/login/login_widget.dart';
+
+void main() {}
