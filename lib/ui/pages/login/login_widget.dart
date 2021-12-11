@@ -232,6 +232,7 @@ class LoginWidgetState extends State<LoginWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0, 2),
                                   child: TextFormField(
+                                    key: Key('textUser'),
                                     controller: textController1,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -318,6 +319,7 @@ class LoginWidgetState extends State<LoginWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           65, 0, 18, 0),
                                       child: TextFormField(
+                                        key: Key('textPass'),
                                         controller: textController2,
                                         obscureText: !passwordVisibility,
                                         decoration: InputDecoration(
@@ -395,7 +397,6 @@ class LoginWidgetState extends State<LoginWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 15, 0, 0),
                                   child: GestureDetector(
-                                    onTap: () {},
                                     child: Image.asset(
                                       'assets/images/Boton_.png',
                                       width: 230,
@@ -485,7 +486,6 @@ class LoginWidgetState extends State<LoginWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 15, 0, 0),
                                   child: GestureDetector(
-                                    onTap: () {},
                                     child: Image.asset(
                                       'assets/images/Boton_.png',
                                       width: 230,
