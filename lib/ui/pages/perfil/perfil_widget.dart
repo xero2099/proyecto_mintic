@@ -1,5 +1,8 @@
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -17,6 +20,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
 
   @override
   Widget build(BuildContext context) {
+    Image_Control image = Get.find();
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -36,11 +40,13 @@ class _PerfilWidgetState extends State<PerfilWidget> {
             ),
             Align(
               alignment: AlignmentDirectional(0, 0),
-              child: Image.asset(
-                'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
+              child: Obx(
+                () => Image.asset(
+                  image.imagen,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Align(

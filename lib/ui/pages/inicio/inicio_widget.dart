@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/controlador/state_controller.dart';
 import 'package:proyecto_mintic/ui/pages/busqueda/busqueda_widget.dart';
+import 'package:proyecto_mintic/ui/pages/configuracion/configuracion_widget.dart';
 import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
 import 'package:proyecto_mintic/ui/widgets/card_state.dart';
 import 'package:proyecto_mintic/domain/models/state_model.dart';
@@ -19,19 +21,15 @@ class _InicioWidgetState extends State<InicioWidget> {
   @override
   Widget build(BuildContext context) {
     String tituloEjemplo = 'tituloEjemplo';
-    Widget pathImagenEjemplo = IconButton(
-      icon: Image.asset('assets/images/P_chat_inactiovo.png'),
-      iconSize: 40,
-      onPressed: () {
-        Get.to(() => BusquedaWidget());
-      },
-    );
+    String pathImagenEjemplo = 'assets/images/P_chat_inactiovo.png';
     String estadoEjemplo = 'estadoEjemplo';
     StateController statecontroller = Get.find();
     statecontroller.addState(StateModel(
         titulo: tituloEjemplo,
         pathImagen: pathImagenEjemplo,
         estado: estadoEjemplo));
+    Image_Control image = Get.find();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -40,11 +38,13 @@ class _InicioWidgetState extends State<InicioWidget> {
           children: [
             Align(
               alignment: AlignmentDirectional(0, 0),
-              child: Image.asset(
-                'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
+              child: Obx(
+                () => Image.asset(
+                  image.imagen,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Align(
@@ -72,29 +72,32 @@ class _InicioWidgetState extends State<InicioWidget> {
               alignment: AlignmentDirectional(-0.8, -1),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-                child: Image.asset(
-                  'assets/images/Logo_2.png',
-                  width: 150,
-                  height: 60,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            //BOTON BUSQUEDA NUEVO
-            Align(
-              alignment: AlignmentDirectional(0.75, -1.015),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 33, 0, 0),
                 child: IconButton(
-                  icon: Image.asset('assets/images/BTN_BUSCAR.png'),
-                  iconSize: 50,
+                  icon: Image.asset('assets/images/Logo_2.png'),
+                  iconSize: 100,
                   onPressed: () {
-                    Get.to(() => BusquedaWidget());
+                    Get.to(() => ConfiguracionWidget());
                   },
                 ),
               ),
             ),
-            //
+            GestureDetector(
+              onTap: () {
+                Get.to(() => BusquedaWidget());
+              },
+              child: Align(
+                alignment: AlignmentDirectional(0.75, -0.97),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 33, 0, 0),
+                  child: Image.asset(
+                    'assets/images/BTN_BUSCAR.png',
+                    width: 50,
+                    height: 45,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
             Align(
               alignment: AlignmentDirectional(0, 0),
               child: Padding(
@@ -115,13 +118,18 @@ class _InicioWidgetState extends State<InicioWidget> {
                           return ListView.builder(
                             itemCount: statecontroller.listStates.length,
                             itemBuilder: (context, index) {
-                              return CardState(
-                                  titulo:
-                                      statecontroller.listState[index].titulo,
-                                  pathImagen: statecontroller
-                                      .listState[index].pathImagen,
-                                  estado:
-                                      statecontroller.listState[index].estado);
+                              return GestureDetector(
+                                onTap: () {
+                                  Get.to(() => PerfilWidget());
+                                },
+                                child: CardState(
+                                    titulo:
+                                        statecontroller.listState[index].titulo,
+                                    pathImagen: statecontroller
+                                        .listState[index].pathImagen,
+                                    estado: statecontroller
+                                        .listState[index].estado),
+                              );
                             },
                           );
                         }))
