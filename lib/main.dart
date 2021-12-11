@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/controlador/state_controller.dart';
 import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
 
@@ -11,6 +12,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(StateController());
   Get.put(StateController2());
+  Get.put(Image_Control());
   runApp(MyApp());
 }
 

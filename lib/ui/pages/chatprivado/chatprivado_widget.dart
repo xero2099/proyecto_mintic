@@ -1,3 +1,6 @@
+import 'package:get/get.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +16,8 @@ class _ChatprivadoWidgetState extends State<ChatprivadoWidget> {
 
   @override
   Widget build(BuildContext context) {
+    Image_Control image = Get.find();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -21,11 +26,13 @@ class _ChatprivadoWidgetState extends State<ChatprivadoWidget> {
           children: [
             Align(
               alignment: AlignmentDirectional(0, 0),
-              child: Image.asset(
-                'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
+              child: Obx(
+                () => Image.asset(
+                  image.imagen,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Align(
