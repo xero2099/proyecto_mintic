@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 
 class InicioWidget extends StatefulWidget {
   const InicioWidget({Key key}) : super(key: key);
-
+//prueba para actualizar
   @override
   _InicioWidgetState createState() => _InicioWidgetState();
 }
