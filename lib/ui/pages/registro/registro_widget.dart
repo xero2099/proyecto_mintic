@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/filtro/filtro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -162,7 +161,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Image_Control image = Get.find();
     return Form(
       key: formKey,
       autovalidateMode: AutovalidateMode.always,
@@ -172,13 +170,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
           ///child: Expanded(
           child: Stack(
             children: [
-              Obx(
-                () => Image.asset(
-                  image.imagen,
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+              Image.asset(
+                'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
               ),
               ListView(
                 children: [
@@ -424,7 +420,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0, 0, 0, 0),
                                                   child: Text(
-                                                    'Registro',
+                                                    'Registro2',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme
                                                         .bodyText1
