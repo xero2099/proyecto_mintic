@@ -420,7 +420,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0, 0, 0, 0),
                                                   child: Text(
-                                                    'Registro',
+                                                    'Registro2',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme
                                                         .bodyText1
