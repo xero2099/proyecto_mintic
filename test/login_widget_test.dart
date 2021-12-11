@@ -21,5 +21,9 @@ void main() {
     LoginWidget loginWidget = new LoginWidget();
     //Se agrega al tester de widgets
     await tester.pumpWidget(buildTestableWidget(loginWidget));
+
+    //Se presiona en el botón de Login
+    Finder loginButton = find.byKey(Key('loginSubmit'));
+    await tester.tap(loginButton);
   });
 }
