@@ -1,7 +1,9 @@
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/controlador/state_controller2.dart';
 import 'package:proyecto_mintic/domain/models/state_model2.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    Image_Control image = Get.find();
     String tituloEjemplo2 = 'tituloEjemplo';
     String pathImagenEjemplo2 = 'assets/images/P_offline.png';
     String estadoEjemplo2 = 'estadoEjemplo';
@@ -34,11 +37,13 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
       body: SafeArea(
         child: Stack(
           children: [
-            Image.asset(
-              'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
-              width: double.infinity,
-              height: double.infinity,
-              fit: BoxFit.cover,
+            Obx(
+              () => Image.asset(
+                image.imagen,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
             Align(
               alignment: AlignmentDirectional(0, 0),

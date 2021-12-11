@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
 import 'package:proyecto_mintic/ui/pages/registro/registro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -155,6 +156,8 @@ class _LoginWidgetState extends State<LoginWidget> {
   }
 
   Widget build(BuildContext context) {
+    Image_Control image = Get.find();
+
     return Form(
       key: formKey,
       autovalidateMode: AutovalidateMode.always,
@@ -163,11 +166,13 @@ class _LoginWidgetState extends State<LoginWidget> {
         body: SafeArea(
           child: Stack(
             children: [
-              Image.asset(
-                'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
+              Obx(
+                () => Image.asset(
+                  image.imagen,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
               Align(
                 child: Padding(

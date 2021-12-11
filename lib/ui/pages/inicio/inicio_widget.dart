@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/controlador/state_controller.dart';
 import 'package:proyecto_mintic/ui/pages/busqueda/busqueda_widget.dart';
+import 'package:proyecto_mintic/ui/pages/configuracion/configuracion_widget.dart';
 import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
 import 'package:proyecto_mintic/ui/widgets/card_state.dart';
 import 'package:proyecto_mintic/domain/models/state_model.dart';
@@ -32,6 +34,8 @@ class _InicioWidgetState extends State<InicioWidget> {
         titulo: tituloEjemplo,
         pathImagen: pathImagenEjemplo,
         estado: estadoEjemplo));
+    Image_Control image = Get.find();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -40,11 +44,13 @@ class _InicioWidgetState extends State<InicioWidget> {
           children: [
             Align(
               alignment: AlignmentDirectional(0, 0),
-              child: Image.asset(
-                'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
+              child: Obx(
+                () => Image.asset(
+                  image.imagen,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Align(
@@ -72,11 +78,12 @@ class _InicioWidgetState extends State<InicioWidget> {
               alignment: AlignmentDirectional(-0.8, -1),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-                child: Image.asset(
-                  'assets/images/Logo_2.png',
-                  width: 150,
-                  height: 60,
-                  fit: BoxFit.contain,
+                child: IconButton(
+                  icon: Image.asset('assets/images/Logo_2.png'),
+                  iconSize: 100,
+                  onPressed: () {
+                    Get.to(() => ConfiguracionWidget());
+                  },
                 ),
               ),
             ),
