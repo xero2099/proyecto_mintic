@@ -1,7 +1,10 @@
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
-
+import 'package:get/get.dart';
+import 'package:proyecto_mintic/ui/pages/configuracion/configuracion_widget.dart';
+import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +20,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
 
   @override
   Widget build(BuildContext context) {
+    Image_Control image = Get.find();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -36,11 +41,13 @@ class _PerfilWidgetState extends State<PerfilWidget> {
             ),
             Align(
               alignment: AlignmentDirectional(0, 0),
-              child: Image.asset(
-                'assets/images/WhatsApp_Image_2021-11-20_at_8.19.57_PM.jpeg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
+              child: Obx(
+                () => Image.asset(
+                  image.imagen,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Align(
@@ -80,7 +87,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-0.01, -0.88),
+              alignment: AlignmentDirectional(-0.01, -0.85),
               child: Image.asset(
                 'assets/images/Perfil.png',
                 width: 200,
@@ -98,20 +105,32 @@ class _PerfilWidgetState extends State<PerfilWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0, -1.02),
+              alignment: AlignmentDirectional(0, -0.98),
               child: Image.asset(
                 'assets/images/Botton_Nav_Blanco2.png',
                 width: double.infinity,
-                height: 50,
                 fit: BoxFit.cover,
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-0.9, -0.98),
+              alignment: AlignmentDirectional(-0.9, -0.97),
               child: Image.asset(
                 'assets/images/Logo_2.png',
-                width: 100,
+                width: 120,
                 fit: BoxFit.contain,
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.75, -1),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(90, 9, 0, 0),
+                child: IconButton(
+                  icon: Image.asset('assets/images/setting.png'),
+                  iconSize: 35,
+                  onPressed: () {
+                    Get.to(() => ConfiguracionWidget());
+                  },
+                ),
               ),
             ),
             Align(
@@ -270,11 +289,11 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0, 1),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 720, 0, 3),
               child: Container(
                 width: double.infinity,
-                height: 68,
+                height: 200,
                 decoration: BoxDecoration(
                   color: Color(0x00EEEEEE),
                 ),
@@ -290,33 +309,40 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                       ),
                     ),
+                    Align(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(1, 0, 0, 0),
+                        child: Image.asset(
+                          'assets/images/BTN_ms.png',
+                          width: 50,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(40, 18, 0, 4),
-                          child: Image.asset(
-                            'assets/images/Home_off.png',
-                            width: 40,
-                            fit: BoxFit.cover,
+                          padding: EdgeInsetsDirectional.fromSTEB(40, 80, 0, 4),
+                          child: IconButton(
+                            icon: Image.asset('assets/images/Home_off.png'),
+                            onPressed: () {
+                              Get.to(() => InicioWidget());
+                            },
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(30, 18, 0, 0),
-                          child: GestureDetector(
-                            onTap: () {
+                          padding: EdgeInsetsDirectional.fromSTEB(25, 80, 0, 0),
+                          child: IconButton(
+                            icon: Image.asset('assets/images/chat_off.png'),
+                            onPressed: () {
                               Get.to(() => ChatprivadoWidget());
                             },
-                            child: Image.asset(
-                              'assets/images/chat_off.png',
-                              width: 40,
-                              fit: BoxFit.cover,
-                            ),
                           ),
                         ),
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(105, 18, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(105, 80, 0, 0),
                           child: Image.asset(
                             'assets/images/game_off.png',
                             width: 45,
@@ -327,33 +353,21 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           alignment: AlignmentDirectional(0, 0),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(40, 18, 0, 0),
-                            child: GestureDetector(
-                              onTap: () {
+                                EdgeInsetsDirectional.fromSTEB(30, 80, 0, 0),
+                            child: IconButton(
+                              icon: Image.asset('assets/images/perfik_on.png'),
+                              onPressed: () {
                                 Get.to(() => PerfilWidget());
                               },
-                              child: Image.asset(
-                                'assets/images/perfik_on.png',
-                                width: 40,
-                                fit: BoxFit.cover,
-                              ),
                             ),
                           ),
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.93),
-              child: Image.asset(
-                'assets/images/BTN_ms.png',
-                width: 56,
-                fit: BoxFit.cover,
-              ),
-            )
           ],
         ),
       ),
