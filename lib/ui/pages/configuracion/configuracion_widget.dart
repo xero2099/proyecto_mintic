@@ -1,11 +1,8 @@
 import 'package:get/get.dart';
 import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
-
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ConfiguracionWidget extends StatefulWidget {
   const ConfiguracionWidget({Key key}) : super(key: key);
@@ -41,60 +38,9 @@ class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.02, 1.0),
-              child: IconButton(
-                icon: Image.asset('assets/images/Boton_.png'),
-                iconSize: 230,
-                onPressed: () {
-                  Get.to(() => LoginWidget());
-                },
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.02, 0.68),
-              child: Text(
-                'Cerrar Sesión',
-                style: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'NEXA',
-                  color: Color(0xFFFFFEFE),
-                  useGoogleFonts: false,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.04, 0.54),
-              child: Image.asset(
-                'assets/images/Boton_.png',
-                width: 230,
-                height: 35,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.32),
+              alignment: AlignmentDirectional(0, 0.15),
               child: SwitchListTile(
-                value: switchListTileValue1 ??= true,
-                onChanged: (newValue) => {
-                  setState(() => switchListTileValue1 = newValue),
-                  image.cambiarImagen()
-                },
-                title: Text(
-                  'Modo Claro',
-                  style: FlutterFlowTheme.title3.override(
-                    fontFamily: 'NEXA',
-                    color: Color(0xFFFFFEFE),
-                    useGoogleFonts: false,
-                  ),
-                ),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.04),
-              child: SwitchListTile(
-                value: switchListTileValue3 ??= true,
+                value: switchListTileValue3 ??= false,
                 onChanged: (newValue) => {
                   setState(() => switchListTileValue3 = newValue),
                   image.cambiarOscuro()
@@ -108,12 +54,12 @@ class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
                   ),
                 ),
                 tileColor: Color(0xFFF5F5F5),
-                dense: false,
+                dense: true,
                 controlAffinity: ListTileControlAffinity.trailing,
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.01, -0.13),
+              alignment: AlignmentDirectional(0.01, -0.10),
               child: Text(
                 'CONFIGURACIÓN',
                 style: FlutterFlowTheme.title1.override(
@@ -132,17 +78,111 @@ class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
                 fit: BoxFit.cover,
               ),
             ),
+            //BOTON CERRAR SESION
             Align(
-              alignment: AlignmentDirectional(0.04, 0.52),
-              child: Text(
-                'Activar Mi Ubicación',
-                style: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'NEXA',
-                  color: Color(0xFFFFFEFE),
-                  useGoogleFonts: false,
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 400, 0, 0),
+                child: Container(
+                  child: Stack(children: [
+                    Align(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                        child: GestureDetector(
+                          child: Image.asset(
+                            'assets/images/Boton_.png',
+                            width: 230,
+                            height: 35,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      child: SizedBox(
+                        width: 230,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(1, 8, 2, 2),
+                          child: TextButton(
+                            key: Key('logoutsubmit'),
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(-8),
+                              primary: Color(0xFFFABAFA),
+                            ),
+                            onPressed: () {
+                              Get.to(() => LoginWidget());
+                            },
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              child: Text(
+                                'Cerrar Sesion',
+                                style: FlutterFlowTheme.subtitle2.override(
+                                  fontFamily: 'NEXA',
+                                  color: Color(0xFFFABAFA),
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]),
                 ),
               ),
-            )
+            ),
+            Align(
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 550, 0, 0),
+                child: Container(
+                  child: Stack(children: [
+                    Align(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                        child: GestureDetector(
+                          child: Image.asset(
+                            'assets/images/Boton_.png',
+                            width: 230,
+                            height: 35,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      child: SizedBox(
+                        width: 230,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(1, 8, 2, 2),
+                          child: TextButton(
+                            key: Key('locationsubmit'),
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(-8),
+                              primary: Color(0xFFFABAFA),
+                            ),
+                            onPressed: () {
+                              Get.to(() => LoginWidget());
+                            },
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              child: Text(
+                                'Activar Mi Ubicación',
+                                style: FlutterFlowTheme.subtitle2.override(
+                                  fontFamily: 'NEXA',
+                                  color: Color(0xFFFABAFA),
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]),
+                ),
+              ),
+            ),
           ],
         ),
       ),
