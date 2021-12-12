@@ -208,7 +208,6 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 1, 0, 0),
                                   child: GestureDetector(
-                                    onTap: () {},
                                     child: Align(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(

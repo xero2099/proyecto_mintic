@@ -400,7 +400,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 15, 0, 0),
                                   child: GestureDetector(
-                                    onTap: () {},
                                     child: Image.asset(
                                       'assets/images/Boton_.png',
                                       width: 230,
@@ -490,7 +489,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 15, 0, 0),
                                   child: GestureDetector(
-                                    onTap: () {},
                                     child: Image.asset(
                                       'assets/images/Boton_.png',
                                       width: 230,

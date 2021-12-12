@@ -36,7 +36,7 @@ class _ChatprivadoWidgetState extends State<ChatprivadoWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0, -0.99),
+              alignment: AlignmentDirectional(0, -0.90),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 665),
                 child: Image.asset(
@@ -46,8 +46,16 @@ class _ChatprivadoWidgetState extends State<ChatprivadoWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0.03, -0.9),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(120, 15, 0, 0),
+              child: Image.asset(
+                'assets/images/P_online.png',
+                width: 50,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(200, 45, 0, 0),
               child: Text(
                 'Online',
                 style: FlutterFlowTheme.title1.override(
@@ -58,30 +66,13 @@ class _ChatprivadoWidgetState extends State<ChatprivadoWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(-0.37, -0.98),
-              child: Image.asset(
-                'assets/images/P_online.png',
-                width: 50,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.28, -1),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(200, 15, 0, 0),
               child: Text(
                 'Adam Suley',
                 style: FlutterFlowTheme.title3,
               ),
             ),
-            /*
-            Align(
-              alignment: AlignmentDirectional(-0.8, -0.96),
-              child: Image.asset(
-                'assets/images/Flecha.png',
-                width: 30,
-                fit: BoxFit.cover,
-              ),
-            ),*/
             Align(
               alignment: AlignmentDirectional(0, 0),
               child: Padding(

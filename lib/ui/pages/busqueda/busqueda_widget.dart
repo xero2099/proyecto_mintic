@@ -7,6 +7,8 @@ import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/controlador/state_controller2.dart';
 import 'package:proyecto_mintic/domain/models/state_model2.dart';
 import 'package:flutter/material.dart';
+import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
+import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
 import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
 import 'package:proyecto_mintic/ui/widgets/card_state2.dart';
 
@@ -106,6 +108,86 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                       ],
                     ),
                   ),
+                ),
+              ),
+            ),
+            //BOTON NAVEGACION ABAJO
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 720, 0, 3),
+              child: Container(
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Color(0x00EEEEEE),
+                ),
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(-91.82, 1),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(1, 0, 1, 0),
+                        child: Image.asset(
+                          'assets/images/Botton_Nav_Blanco.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Align(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(1, 0, 0, 0),
+                        child: Image.asset(
+                          'assets/images/BTN_ms.png',
+                          width: 50,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(40, 80, 0, 4),
+                          child: IconButton(
+                            icon: Image.asset('assets/images/Home_off.png'),
+                            onPressed: () {
+                              Get.to(() => InicioWidget());
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(25, 80, 0, 0),
+                          child: IconButton(
+                            icon: Image.asset('assets/images/chat_off.png'),
+                            onPressed: () {
+                              Get.to(() => ChatprivadoWidget());
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(105, 80, 0, 0),
+                          child: Image.asset(
+                            'assets/images/game_off.png',
+                            width: 45,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(30, 80, 0, 0),
+                            child: IconButton(
+                              icon: Image.asset('assets/images/perfik_on.png'),
+                              onPressed: () {
+                                Get.to(() => PerfilWidget());
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
