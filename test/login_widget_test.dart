@@ -14,6 +14,7 @@ import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
 void main() {
   setUp(() {
     Get.put(Image_Control());
+    Get.testMode = true;
   });
   group('Comprobación de funcionalidad de widget de login >', () {
     testWidgets('Email y contraseña vacías no permiten ingreso >',
@@ -83,8 +84,73 @@ void main() {
       Finder passText = find.byKey(Key('textPass'));
 
       //Se ingresa un correo electrónico válido
+      print('Ingresando usuario: lucas@xyz.com');
       await tester.enterText(userText, 'lucas@xyz.com');
+      print('Usuario ingresado');
       await tester.enterText(passText, '');
+
+      //Se presiona el botón de Login
+      Finder loginButton = find.byKey(Key('loginSubmit'));
+      await tester.tap(loginButton);
+    });
+
+    testWidgets('Usuario vacío no permite ingreso',
+        (WidgetTester tester) async {
+      print('Inicializando widget');
+      Widget buildTestableWidget(Widget widget) {
+        return new MediaQuery(
+            data: new MediaQueryData(), child: new MaterialApp(home: widget));
+      }
+
+      print('Widget inicializado');
+
+      print('Construyendo página de login');
+      //Crea una página de Login
+      LoginWidget loginWidget = new LoginWidget();
+
+      print('Página de login creada');
+      //Se agrega al tester de widgets
+      await tester.pumpWidget(buildTestableWidget(loginWidget));
+
+      Finder userText = find.byKey(Key('textUser'));
+      Finder passText = find.byKey(Key('textPass'));
+
+      await tester.enterText(userText, '');
+      //Se ingresa una contraseña válida
+      print('Ingresando contraseña: cebollado89');
+      await tester.enterText(passText, 'cebollado89');
+
+      //Se presiona el botón de Login
+      Finder loginButton = find.byKey(Key('loginSubmit'));
+      await tester.tap(loginButton);
+    });
+
+    testWidgets('Correo con formato incorrecto no permite ingreso',
+        (WidgetTester tester) async {
+      print('Inicializando widget');
+      Widget buildTestableWidget(Widget widget) {
+        return new MediaQuery(
+            data: new MediaQueryData(), child: new MaterialApp(home: widget));
+      }
+
+      print('Widget inicializado');
+
+      print('Construyendo página de login');
+      //Crea una página de Login
+      LoginWidget loginWidget = new LoginWidget();
+
+      print('Página de login creada');
+      //Se agrega al tester de widgets
+      await tester.pumpWidget(buildTestableWidget(loginWidget));
+
+      Finder userText = find.byKey(Key('textUser'));
+      Finder passText = find.byKey(Key('textPass'));
+      //Se ingresa un usuario no válido
+      print('Ingresando usuario: lucas@xyz');
+      await tester.enterText(userText, 'lucas@xyz');
+      //Se ingresa una contraseña válida
+      print('Ingresando contraseña: cebollado89');
+      await tester.enterText(passText, 'cebollado89');
 
       //Se presiona el botón de Login
       Finder loginButton = find.byKey(Key('loginSubmit'));
