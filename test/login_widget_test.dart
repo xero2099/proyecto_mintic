@@ -7,9 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
 
 void main() {
+  setUp(() {
+    Get.put(Image_Control());
+  });
   group('Comprobación de funcionalidad de widget de login >', () {
     testWidgets('Email y contraseña vacías no permiten ingreso >',
         (WidgetTester tester) async {
