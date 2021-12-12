@@ -34,6 +34,8 @@ void main() {
       Finder loginButton = find.byKey(Key('loginSubmit'));
       await tester.tap(loginButton);
 
+      print('No puede ingresar a la página');
+
       //Se 'bombea' el test de nuevo
       await tester.pump();
 
